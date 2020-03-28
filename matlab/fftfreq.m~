@@ -1,0 +1,10 @@
+function f=frqtfreq(npts,dt)
+fmin = -1/(2*dt);
+df = 1/(npts*dt);
+f0 = -fmin;
+alias_fmin = -1/(2*dt);
+f0a = -alias_fmin;
+
+frq = mod(linspace(0, 2*f0-df, npts)+f0,  2*f0)  - f0;
+fa = mod(                        frq+f0a, 2*f0a) - f0a;
+f = fa;
